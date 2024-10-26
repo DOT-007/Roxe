@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Header and Navbar */
+        .header {
+            background-color: #003a78;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .navbar {
+            background-color: #0056a5;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        /* Main Content */
+        .container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .form-section, .info-section {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            border-radius: 5px;
+        }
+        .form-section h2 {
+            color: #003a78;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section .captcha {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .form-section .captcha img {
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+        .form-section button {
+            background-color: #0056a5;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            font-size: 16px;
+        }
+        .form-section button:hover {
+            background-color: #003a78;
+        }
+
+        /* Information Section */
+        .info-section h3 {
+            font-size: 16px;
+            color: #ffcc00;
+            margin: 0;
+        }
+        .info-section p {
+            color: #333;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>SBI Online</h1>
+        <div>
+            <a href="#">SBI Home Loan</a> | <a href="#">About OnlineSBI</a> | <a href="#">Forms</a> | <a href="#">Net Banking Branches</a>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Products & Services</a>
+        <a href="#">How Do I (Help)</a>
+        <a href="#">Manage Debit Card E-Mandate</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Login Form Section -->
+        <div class="form-section">
+            <h2>Login to OnlineSBI</h2>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <label for="captcha">Enter the text as shown in the image</label>
+                <div class="captcha">
+                    <input type="text" id="captcha" name="captcha" required>
+                    <img src="captcha_image.png" alt="Captcha">
+                </div>
+
+                <label>Select one of the Captcha options</label>
+                <input type="radio" id="image-captcha" name="captcha-option" checked>
+                <label for="image-captcha">Image Captcha</label>
+                <input type="radio" id="audio-captcha" name="captcha-option">
+                <label for="audio-captcha">Audio Captcha</label>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h3>Dear Customer,</h3>
+            <p>OTP based login & mandatory login password change after 180 days introduced for added security.</p>
+            <p>Please do not share OTP/password/user information with anyone. Bank never asks for such information.</p>
+            <p>For better control & security of your account, you can Lock or Unlock your INB access through link "Lock & Unlock User" available at bottom of this Page.</p>
+            <p>Mandatory Profile password change after 365 days introduced for added security.</p>
+        </div>
+    </div>
+
+</body>
+</html>

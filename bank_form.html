@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Information Input</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar styling */
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .navbar img {
+            height: 40px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f4f4f9;
+        }
+
+        /* Main container styling */
+        .main-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping for smaller screens */
+            padding: 100px 20px 20px; /* Add padding to accommodate fixed navbar */
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* Left side form styling */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Allow flex items to grow */
+            min-width: 300px; /* Set minimum width for responsiveness */
+            max-width: 500px;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-container label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-container input[type="text"], 
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border 0.3s;
+        }
+
+        .form-container input[type="text"]:focus,
+        .form-container input[type="number"]:focus {
+            border-color: #007bff; /* Highlight border on focus */
+        }
+
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Right side description styling */
+        .description-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Allow flex items to grow */
+            min-width: 300px; /* Set minimum width for responsiveness */
+            max-width: 500px;
+        }
+
+        .description-container h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .description-container p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .navbar a {
+                margin: 5px 0; /* Add margin between links for smaller screens */
+            }
+            .main-container {
+                flex-direction: column; /* Stack containers on small screens */
+                padding-top: 80px; /* Adjust padding for navbar */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with logo and links -->
+    <div class="navbar">
+        <img src="https://files.catbox.moe/zmkdfw.png" alt="Logo"> <!-- Update the path to your logo -->
+        <div>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/about">About</a>
+        </div>
+    </div>
+
+    <!-- Main container with left and right sections -->
+    <div class="main-container">
+        <!-- Left side: Form container -->
+        <div class="form-container">
+            <h2>Bank Information</h2>
+            <form action="/submit-bank-info" method="POST">
+                <label for="account-holder">Account Holder Name</label>
+                <input type="text" id="account-holder" name="account_holder" required placeholder="Enter account holder name">
+
+                <label for="account-number">Account Number</label>
+                <input type="number" id="account-number" name="account_number" required placeholder="Enter account number">
+
+                <label for="bank-name">Bank Name</label>
+                <input type="text" id="bank-name" name="bank_name" required placeholder="Enter bank name">
+
+                <label for="branch-name">Branch Name</label>
+                <input type="text" id="branch-name" name="branch_name" required placeholder="Enter branch name">
+
+                <label for="ifsc-code">IFSC Code</label>
+                <input type="text" id="ifsc-code" name="ifsc_code" required placeholder="Enter IFSC code">
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <!-- Right side: Description container -->
+        <div class="description-container">
+            <h3>Why Updating Your Bank Information Matters</h3>
+            <p>Keeping your bank information up-to-date is crucial for ensuring that your transactions, notifications, and other banking operations run smoothly. Outdated information could lead to delays in processing transactions, missed notifications, and potential security issues.</p>
+            <p>By updating your bank details regularly, you can help secure your account, reduce errors, and make sure you stay informed about all important bank activities. Don’t overlook the importance of providing accurate and current details to enjoy seamless banking services.</p>
+        </div>
+    </div>
+</body>
+</html>
